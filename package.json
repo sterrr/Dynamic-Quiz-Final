@@ -1,0 +1,20 @@
+{
+  "name": "PhaseII",
+  "version": "0.0.0",
+  "main": "Q.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.30",
+    "npm": "1.4.21"
+  },
+  "author": "Alastair Beeson",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "fs": "0.0.2"
+  }
+}

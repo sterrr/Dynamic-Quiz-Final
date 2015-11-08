@@ -91,7 +91,7 @@
         $("#time").hide();
         selections = [];
         displayNext();
-        $('#imageFrame').show();
+        $('#image').show();
         $('#start').hide();
         $('#pie').hide();
         $("#questionstat").hide();
@@ -205,6 +205,7 @@
                 mintime = $("#minutes").html();
                 sectime = $("#seconds").html();
                 $('#image').hide();
+                $('#image').html("")
                 var statElem = displayStat();
                 quizdiv.append(statElem).fadeIn();
                 $('#next').hide();
@@ -222,7 +223,8 @@
                 console.log(scores);
 
 	           scores.push(User);
-
+                
+                
 
                 
                 postScores();

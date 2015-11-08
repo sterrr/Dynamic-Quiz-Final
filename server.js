@@ -29,6 +29,7 @@ app.post('/quiz', function (req, res) {
     res.send("Please Work...");
 });
 
+//for future high score implementation
 app.get('/highscores', function (req, res) {
     var scorecontent = fs.readFileSync("data/TopUsers.json");
 	res.send(scorecontent);

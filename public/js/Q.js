@@ -256,12 +256,13 @@
         
                 console.log(quiz);
                 
+                var thingstosend = JSON.stringify(quiz);
                 $.ajax({
         type: "PUT",
         url : "/quiz/" + id,
         dataType: "json",
-        //contentType: "application/json; charset=utf-8",
-        //data : quiz
+        contentType: "application/json; charset=utf-8",
+        data : thingstosend
     });
                 
              

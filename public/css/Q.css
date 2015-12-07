@@ -6,9 +6,18 @@ background: #512D78;
 
 }
 
+
+
+html body {
+    background-color: #512D78;
+    color: #AAAA39;
+}
+
 body {
   font-family: Poiret One;
-    
+    background-color: #512D78;
+    color: #AAAA39;
+     
 }
 
 h1 {

@@ -19,6 +19,7 @@
     var selections = []; //Array containing user choices
     var quizdiv = $('#quizdiv'); //quiz div object
     var quiz = null;
+    var id = null;
     var scores = [];
     var numCorrect = 0; //Number of user answers that are correct
     var numWrong = 0; //Number of user answers that are wrong
@@ -102,12 +103,36 @@
         $("#seconds").html('00');
         sec = 0;
     });
+    
+     $(".delete").click(function() { 
+        $.ajax({
+            url: "/quiz/" + $(this).attr("alt"),
+            type: "DELETE"
+        })
+        
+    });
 
-    $("#SUBMIT").on("click", function() { //This is the code that activates when the form is validated
+    $(".choose").click(function() { //This is the code that activates when the form is validated
 
         if (validateForm() == true) {
             $("#Login").hide();
-            loadQuiz();
+             $("#menucontainer").hide();
+             $.ajax({
+                url: "/quiz/" + $(this).attr("alt"),
+                dataType: "text",
+                success: function(data) {
+                    quiz = $.parseJSON(data);
+                    console.log(quiz);
+                    
+                    
+                },
+                async: false
+            });
+            id = quiz.id
+            console.log(id);
+            $('#header').text(quiz.title);
+	        $('#description').text(quiz.description);
+              $('#title1').text(quiz.title);
             $("#container").show();
             displayNext();
             
@@ -116,6 +141,8 @@
             $("#minutes").show();
             $("#seconds").show();
             $("html").css("background-image", "url('./Photos/Capture1.JPG')");
+            
+            
 
             //Below is code used for the time in the container
             var timer = setInterval(function() {
@@ -220,16 +247,22 @@
                   "time": "" + mintime + " : " + sectime + ""
 	               }
                 
-                console.log(scores);
+                
 
 	           scores.push(User);
                 
-                
-
-                
                 postScores();
                 
-                 postQuiz();
+        
+                console.log(quiz);
+                
+                $.ajax({
+        type: "PUT",
+        url : "/quiz/" + id,
+        //dataType: "json",
+        //contentType: "application/json; charset=utf-8",
+        data : quiz
+    });
                 
              
                
@@ -252,11 +285,11 @@
         for (var i=0; i<quiz.questions.length; i++){ // returns the users answer for the questions, whether it is right or wrong, and compares it to the global variables
         	$("#results").append("<h3> Question " + [i+1] + ".) "+ quiz.questions[i].text + "<h3>");
             
-        if(selections[i] == quiz.questions[i]["correct_answer"]){
-        	$("#results").append("You got it right! The Global Percentage of Correct Answers for this Question is " + (100*(quiz.questions[i]["global_correct"]/quiz.questions[i]["global_total"])).toFixed(2) + "% in " + quiz.questions[i]["global_total"] +" Total Playthroughs"); 
+        if(selections[i] == quiz.questions[i].correct_answer){
+        	$("#results").append("You got it right! The Global Percentage of Correct Answers for this Question is " + (100*(quiz.questions[i].global_correct/quiz.questions[i].global_total)).toFixed(2) + "% in " + quiz.questions[i].global_total +" Total Playthroughs"); 
         }
-        if(selections[i] != quiz.questions[i]["correct_answer"]){
-        	$("#results").append("You got it wrong! The Global Percentage of Correct Answers for this Question is " + (100*(quiz.questions[i]["global_correct"]/quiz.questions[i]["global_total"])).toFixed(2) + "% in " + quiz.questions[i]["global_total"] +" Total Playthroughs");
+        if(selections[i] != quiz.questions[i].correct_answer){
+        	$("#results").append("You got it wrong! The Global Percentage of Correct Answers for this Question is " + (100*(quiz.questions[i].global_correct/quiz.questions[i].global_total)).toFixed(2) + "% in " + quiz.questions[i].global_total +" Total Playthroughs");
         }
         $("#results").append("<br>");
             $('#results').show();
@@ -266,28 +299,14 @@
             }
         });
     }
+    
+   
 
-    function loadQuiz(){
-         $.ajax({
-            method: "GET",
-             url: "/quiz",
-            dataType: "text",
-             success: function(data) {
-             quiz = $.parseJSON(data);
-             console.log(quiz);
-            }
-         });
-    }
     
-    function postQuiz(){
-     $.ajax ({
-        type: "POST",
-        url: "/quiz",
-        data: JSON.stringify(quiz),
-        contentType: "application/json"
-    });
-    }
     
+  
+
+  
     function loadScores(){
          $.ajax({
             method: "GET",
@@ -354,12 +373,12 @@
         for (var i = 0; i < selections.length; i++) {
             if (selections[i] == quiz.questions[i].correct_answer) {
                 numCorrect++;
-                quiz.questions[i]["global_correct"]++;
+                quiz.questions[i].global_correct++;
             }
             if (selections[i] != quiz.questions[i].correct_answer) {
                 numWrong++;
             }
-            quiz.questions[i]["global_total"]++;
+            quiz.questions[i].global_total++;
 
         }
 

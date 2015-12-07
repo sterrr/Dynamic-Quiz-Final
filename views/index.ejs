@@ -1,0 +1,89 @@
+<html>
+
+    
+<head>
+  <title id="header"> A Dynamic Quiz</title>
+  <link type='text/css' rel='stylesheet' href='public/css/Q.css' />
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	
+
+<link rel="stylesheet" href="public/css/bootstrap.min.css">
+</head>
+
+<body>
+
+ <div id='Login'>
+ <form id="Login">
+	Enter your Name:
+    <input type="text" name="name" id="NAME" class="form-control" placeholder="Name">
+    
+</form>
+</div>
+ 
+   
+    
+<div id='menucontainer'>
+<div class="dropdown nav pull-left">
+				<br/>
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose a Quiz!
+						<span class="caret"></span></button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+<% for(var i=0; i< list.titles.length; i++) {%>
+   <li><a class="choose" alt="<%= list.id[i] %>" href="#"><%= list.titles[i] %></a></li>
+<% } %>
+  </ul>
+					</div>
+    
+    <div class="dropdown nav pull-left">
+				<br/>
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Delete a Quiz!
+						<span class="caret"></span></button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+<% for(var i=0; i< list.titles.length; i++) {%>
+   <li><a class="delete" alt="<%= list.id[i] %>" href="#"><%= list.titles[i] %></a></li>
+<% } %>
+  </ul>
+					</div>
+    </div>
+    
+
+
+  <div id='container'>
+    <h1><center><div id='title1'>
+      Quiz
+        </div></center></h1>
+	  
+	  <h3><center><div id='description'>
+	  This entire quiz was created with the approval of Matthew Jacob Armstrong himself
+      </div></center></h3>
+	  
+      <div id='timer'>
+	  <span id="minutes">00</span><span id="colon">:</span><span id="seconds">00</span>
+          <div class='button' id='start'> <a href='#'>Start Over</a></div>
+    </div>
+	
+	
+	
+
+      
+    <br/>
+    <div id='quizdiv'></div>
+	<div class='button' id='next'><a href='#'>Next</a></div>
+	<div class='button' id='prev'><a href='#'>Back</a></div>
+    <div id='image'></div>
+    <div id='questionstat'></div>
+    <div id='pie'></div>
+    <div id='results'></div>
+   </div>
+   
+  
+
+
+
+
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script src="public/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src='public/js/Q.js'></script>
+</body>
+
+</html>

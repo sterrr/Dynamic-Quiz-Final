@@ -8,7 +8,6 @@ background: #512D78;
 
 body {
   font-family: Poiret One;
-  background: #512D78;
     
 }
 
@@ -72,6 +71,11 @@ button {
 }
 
 #container2 { 
+    background-color: #512D78;
+    color: #AAAA39;
+}
+
+#container3 { 
     background-color: #512D78;
     color: #AAAA39;
 }

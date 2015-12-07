@@ -55,19 +55,15 @@
    <li><a class="edit" alt="<%= list.id[i] %>" href="#"><%= list.titles[i] %></a></li>
 <% } %>
   </ul>
-					</div>
+        
+</div>
     
-    <div class="dropdown nav pull-left">
-				<br/>
-					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create a Quiz!
-						<span class="caret"></span></button>
-						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
-<% for(var i=0; i< list.titles.length; i++) {%>
-   <li><a class="create" alt="<%= list.id[i] %>" href="#"><%= list.titles[i] %></a></li>
-<% } %>
-  </ul>
-					</div>
-    </div>
+        <a href="#"><button id="create" type="button" class="btn btn-primary nav pull-left">Create a Quiz!</button></a>                   
+        
+
+        
+   
+					
     
 
 
@@ -102,7 +98,8 @@
     <div id='container2'>
     </div>
         
-    
+    <div id='container3'>
+    </div>
     
    
   

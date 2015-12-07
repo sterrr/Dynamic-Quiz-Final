@@ -205,19 +205,19 @@
             editquizformdata.questions[p].global_total = 0;
         }
         }
-        editid = quizedit.id
+        
         editquizformdata.id = quizedit.id;
         var thingstosend = JSON.stringify(editquizformdata);
         
         console.log(thingstosend);
         
-        /*$.ajax({
+        $.ajax({
           method: "PUT",
           url: "/quiz/" + quizedit.id,
             dataType: "json",
             contentType: "application/json; charset=utf-8",
           data: thingstosend
-        })*/
+        })
           
     });
     
@@ -382,7 +382,7 @@
         $("#results").append("<br>");
 
         for (var i=0; i<quiz.questions.length; i++){ // returns the users answer for the questions, whether it is right or wrong, and compares it to the global variables
-        	$("#results").append("<h3> Question " + [i+1] + ".) "+ quiz.questions[i].text + "<h3>");
+        	$("#results").append("<h3>" + quiz.questions[i].text + "<h3>");
             
         if(selections[i] == quiz.questions[i].correct_answer){
         	$("#results").append("You got it right! The Global Percentage of Correct Answers for this Question is " + (100*(quiz.questions[i].global_correct/quiz.questions[i].global_total)).toFixed(2) + "% in " + quiz.questions[i].global_total +" Total Playthroughs"); 

@@ -1,11 +1,11 @@
 [
     {
-        "id": 1,
         "title": "Music Quiz",
         "description": "Quiz",
         "meta_tags": [
             "Music"
         ],
+        "difficulty": "undefined",
         "questions": [
             {
                 "text": "What is a whole step above B?",
@@ -17,13 +17,13 @@
                     "A flat"
                 ],
                 "correct_answer": "3",
-                "global_correct": "0",
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano"
-                ]
+                ],
+                "global_correct": "0",
+                "global_total": 7
             },
             {
                 "text": "What is the fourth note in a C major scale?",
@@ -35,13 +35,13 @@
                     "B#"
                 ],
                 "correct_answer": "1",
-                "global_correct": "0",
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano"
-                ]
+                ],
+                "global_correct": 1,
+                "global_total": 7
             },
             {
                 "text": "Which is a major triad?",
@@ -53,13 +53,13 @@
                     "F, G, B"
                 ],
                 "correct_answer": "2",
-                "global_correct": "0",
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano"
-                ]
+                ],
+                "global_correct": 3,
+                "global_total": 7
             },
             {
                 "text": "What is the 7th note of a G major scale?",
@@ -71,13 +71,13 @@
                     "E flat"
                 ],
                 "correct_answer": "2",
-                "global_correct": "0",
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano"
-                ]
+                ],
+                "global_correct": 2,
+                "global_total": 7
             },
             {
                 "text": "How many flats are in the key signature of B flat?",
@@ -89,13 +89,13 @@
                     "5"
                 ],
                 "correct_answer": "1",
-                "global_correct": "0",
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano"
-                ]
+                ],
+                "global_correct": "0",
+                "global_total": 7
             },
             {
                 "text": "Which is a the formula for a Dorian scale?",
@@ -107,13 +107,13 @@
                     "H-W-W-W-W-H-H"
                 ],
                 "correct_answer": "0",
-                "global_correct": 1,
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano"
-                ]
+                ],
+                "global_correct": 3,
+                "global_total": 7
             },
             {
                 "text": "What scale is exactly the same as the E Locrian scale?",
@@ -125,13 +125,13 @@
                     "F Minor"
                 ],
                 "correct_answer": "2",
-                "global_correct": "0",
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano"
-                ]
+                ],
+                "global_correct": 1,
+                "global_total": 7
             },
             {
                 "text": "Which of the following was an Italian classical composer, born south of Verona, Italy, known for his contributions to 18th-century opera?",
@@ -143,8 +143,6 @@
                     "Gioacchino Rossini"
                 ],
                 "correct_answer": "3",
-                "global_correct": "0",
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -154,7 +152,9 @@
                     "Bellini",
                     "Salieri",
                     "Rossini"
-                ]
+                ],
+                "global_correct": "0",
+                "global_total": 7
             },
             {
                 "text": "What is the time signature in Led Zeppelin’s 'The Ocean?'' ",
@@ -166,14 +166,14 @@
                     "4/4 -> 2/4 -> 3/8"
                 ],
                 "correct_answer": "4",
-                "global_correct": "0",
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano",
                     "Led Zeppelin"
-                ]
+                ],
+                "global_correct": 2,
+                "global_total": 7
             },
             {
                 "text": "What is, according to Billboard, the most successful song of all time?",
@@ -185,17 +185,18 @@
                     "'Hey Jude', The Beatles"
                 ],
                 "correct_answer": "0",
-                "global_correct": 1,
-                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
                     "Piano",
                     "Santana",
                     "The Beatles"
-                ]
+                ],
+                "global_correct": 3,
+                "global_total": 7
             }
-        ]
+        ],
+        "id": 1
     },
     {
         "id": 2,
@@ -1623,7 +1624,7 @@
                 ],
                 "correct_answer": "1",
                 "global_correct": "8",
-                "global_total": "37",
+                "global_total": 38,
                 "meta_tags": [
                     "fire"
                 ]
@@ -1640,7 +1641,7 @@
                 ],
                 "correct_answer": "1",
                 "global_correct": "5",
-                "global_total": "33",
+                "global_total": 34,
                 "meta_tags": [
                     "book"
                 ]
@@ -1656,8 +1657,8 @@
                     "Finch"
                 ],
                 "correct_answer": "0",
-                "global_correct": "8",
-                "global_total": "33",
+                "global_correct": 9,
+                "global_total": 34,
                 "meta_tags": [
                     "bird",
                     "raven",
@@ -1676,7 +1677,7 @@
                 ],
                 "correct_answer": "3",
                 "global_correct": "13",
-                "global_total": "33",
+                "global_total": 34,
                 "meta_tags": [
                     "Shakespeare",
                     "ghost"
@@ -1691,7 +1692,7 @@
                 ],
                 "correct_answer": "2",
                 "global_correct": "18",
-                "global_total": "33",
+                "global_total": 34,
                 "meta_tags": [
                     "impressionism"
                 ]
@@ -1707,7 +1708,7 @@
                 ],
                 "correct_answer": "3",
                 "global_correct": "10",
-                "global_total": "33",
+                "global_total": 34,
                 "meta_tags": [
                     "Paradise Lost"
                 ]
@@ -1723,7 +1724,7 @@
                 ],
                 "correct_answer": "4",
                 "global_correct": "16",
-                "global_total": "33",
+                "global_total": 34,
                 "meta_tags": [
                     "Sherlock Holmes",
                     "Moriarty"
@@ -1738,7 +1739,7 @@
                 ],
                 "correct_answer": "2",
                 "global_correct": "24",
-                "global_total": "33",
+                "global_total": 34,
                 "meta_tags": [
                     "Robert Frost",
                     "Snowy"
@@ -1753,8 +1754,8 @@
                     "Notes From Underground"
                 ],
                 "correct_answer": "0",
-                "global_correct": "13",
-                "global_total": "33",
+                "global_correct": 14,
+                "global_total": 34,
                 "meta_tags": [
                     "invisible man",
                     "literature"
@@ -1770,7 +1771,7 @@
                 ],
                 "correct_answer": "3",
                 "global_correct": "16",
-                "global_total": "37",
+                "global_total": 38,
                 "meta_tags": [
                     "Mockingbird"
                 ]

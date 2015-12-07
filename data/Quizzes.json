@@ -18,7 +18,7 @@
                 ],
                 "correct_answer": "3",
                 "global_correct": "0",
-                "global_total": "0",
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -36,7 +36,7 @@
                 ],
                 "correct_answer": "1",
                 "global_correct": "0",
-                "global_total": "0",
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -54,7 +54,7 @@
                 ],
                 "correct_answer": "2",
                 "global_correct": "0",
-                "global_total": "0",
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -72,7 +72,7 @@
                 ],
                 "correct_answer": "2",
                 "global_correct": "0",
-                "global_total": "0",
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -90,7 +90,7 @@
                 ],
                 "correct_answer": "1",
                 "global_correct": "0",
-                "global_total": "0",
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -107,8 +107,8 @@
                     "H-W-W-W-W-H-H"
                 ],
                 "correct_answer": "0",
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 1,
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -126,7 +126,7 @@
                 ],
                 "correct_answer": "2",
                 "global_correct": "0",
-                "global_total": "0",
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -144,7 +144,7 @@
                 ],
                 "correct_answer": "3",
                 "global_correct": "0",
-                "global_total": "0",
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -167,7 +167,7 @@
                 ],
                 "correct_answer": "4",
                 "global_correct": "0",
-                "global_total": "0",
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",
@@ -185,8 +185,8 @@
                     "'Hey Jude', The Beatles"
                 ],
                 "correct_answer": "0",
-                "global_correct": "0",
-                "global_total": "0",
+                "global_correct": 1,
+                "global_total": 1,
                 "meta_tags": [
                     "Music",
                     "Violin",

@@ -22,6 +22,7 @@
     var quiz = null;
     var quizedit = null;
     var id = null;
+    var editid = null;
     var scores = [];
     var numCorrect = 0; //Number of user answers that are correct
     var numWrong = 0; //Number of user answers that are wrong
@@ -130,14 +131,14 @@
              $("#menucontainer").hide();
             $('#container2').show();
             $("#container2").empty(); //clears the container HTML div so i can make new stuff in it
-            $("#container2").append("<h1>Edit your quiz!</h1>").hide().fadeIn(1000); //fadeIn all new HTML
-            $("#container2").append("<h4>The correct answer text field accepts an array placement number. This means that if the correct answer choice is the first answer choice listed, then the correct answer would be '0'. Thus, the second would be '1', third would be '2', etc.");
+            $("#container2").append("<h1>Edit Away!</h1>").hide().fadeIn(1000); //fadeIn all new HTML
+            $("#container2").append("<h4> Note: The correct answer field takes a numermical value that corresponds to the correct answer's position in an array. The first item in any array is at a position of zero and all subsequent items' positions count up by one!</h4>");
             $("#container2").append("<div class=\"col-md-8 col-md-offset-2 choices radio\" id=\"interface\">"); //making a dynamic div
             $("#interface").append("<form id='editquiz' class='form-horizontal'>");  
             $(".form-horizontal").append('<div class="form-group"><label for="title" class="col-sm-2 control-label">Title</label><div class="col-sm-10"><input type="text" class="form-control" id="title" name="title" value="' + quizedit.title + '"placeholder="Title"></div></div>');
             $(".form-horizontal").append('<div class="form-group"><label for="description" class="col-sm-2 control-label">Description</label><div class="col-sm-10"><textarea rows="2" class="form-control" id="description" name="description" placeholder="Description">' + quizedit.description + '</textarea></div></div>');
 
-            $(".form-horizontal").append('<div class="form-group form-group-meta-tags-quiz"><label for="meta_tags" class="col-sm-2 control-label">Meta_tags</label><div class="col-sm-8"><input type="text" class="form-control" id="meta_tags" name="meta_tags[]" value="' + quizedit.meta_tags[0] + '"placeholder="Meta_tag"></div><a><button id="addmetatagstoquizedit" type="button" class="btn btn-info btn-sm"><i class="icon-plus-sign"></i> Add Metatag!</button></a></div>');
+            $(".form-horizontal").append('<div class="form-group form-group-meta-tags-quiz"><label for="meta_tags" class="col-sm-2 control-label">Meta Tags</label><div class="col-sm-8"><input type="text" class="form-control" id="meta_tags" name="meta_tags[]" value="' + quizedit.meta_tags[0] + '"placeholder="Meta_tag"></div><a><button id="addmetatagstoquizedit" type="button" class="btn btn-info btn-sm"><i class="icon-plus-sign"></i> Add Metatag!</button></a></div>');
             for (var metatagsforquiz = 1; metatagsforquiz < quizedit.meta_tags.length; metatagsforquiz++){
             $(".form-group-meta-tags-quiz").append('<div class="col-sm-offset-2 col-sm-8"><input type="text" class="form-control" id="meta_tags" name="meta_tags[]" value="' + quizedit.meta_tags[metatagsforquiz] + '" placeholder="Answer Choice"></div>');
             }
@@ -155,7 +156,7 @@
 
             $(".form-horizontal").append('<div class="form-group"><label for="correctanswer' + (y+1) + '" class="col-sm-2 control-label">Correct Answer</label><div class="col-sm-10"><input type="text" class="form-control" id="correctanswer' + (y+1) + '" name="questions[' + y + '][correct_answer]" value="' + quizedit.questions[y].correct_answer + '" placeholder="Correct Answer (# of the array spot; i.e 0,1,2,3...)"></div></div>');
 
-            $(".form-horizontal").append('<div class="form-group" id="metatagforquestion' + y + '" alt="' + y + '"><label for="meta_tags' + (y+1) + '" class="col-sm-2 control-label">Meta_tags</label><div class="col-sm-8"><input type="text" class="form-control" id="meta_tags' + (y+1) + '" name="questions[' + y + '][meta_tags][]" value="' + quizedit.questions[y].meta_tags[0] + '" placeholder="Meta_tag"></div><a><button id="addmetatagstoquestionedit" type="button" class="btn btn-info btn-sm"><i class="icon-plus-sign"></i> Add Metatag!</button></a></div>');
+            $(".form-horizontal").append('<div class="form-group" id="metatagforquestion' + y + '" alt="' + y + '"><label for="meta_tags' + (y+1) + '" class="col-sm-2 control-label">Meta Tags</label><div class="col-sm-8"><input type="text" class="form-control" id="meta_tags' + (y+1) + '" name="questions[' + y + '][meta_tags][]" value="' + quizedit.questions[y].meta_tags[0] + '" placeholder="Meta_tag"></div><a><button id="addmetatagstoquestionedit" type="button" class="btn btn-info btn-sm"><i class="icon-plus-sign"></i> Add Metatag!</button></a></div>');
             for (var metatagsforquestions = 1; metatagsforquestions < quizedit.questions[y].meta_tags.length; metatagsforquestions++){
             $("#metatagforquestion" + y).append('<div class="col-sm-offset-2 col-sm-8"><input type="text" class="form-control" id="meta_tags" name="questions[' + $("#question" + y).attr("alt") + '][meta_tags][]" value="' + quizedit.questions[y].meta_tags[metatagsforquestions] + '" placeholder="Meta_tag"></div>');
             }
@@ -164,7 +165,7 @@
         }
             $("#interface").append('<center><a><button id="addquestionsedit" type="button" class="btn btn-info btn-lg"><i class="icon-plus-sign"></i> Add more Questions</button></a></center>')
             $("#interface").append('<br>')
-            $("#interface").append('<center><a href="/"><button id="editquizbutton" type="button" class="btn btn-success btn-lg"><i class="icon-upload-alt"></i> Edit your quiz!</button></a></center>')
+            $("#interface").append('<center><a href="/"><button id="editquizbutton" type="button" class="btn btn-primary btn-lg.round nav pull-left "><i class="icon-upload-alt" vertical-align: middle></i>Submit Edited Quiz</button></a></center>')
     });
 
     $("#container2").on("click", "#addmetatagstoquizedit", function(){ //when the user wants to add more metatags to the quiz during the creation process
@@ -204,12 +205,19 @@
             editquizformdata.questions[p].global_total = 0;
         }
         }
+        editid = quizedit.id
         editquizformdata.id = quizedit.id;
-        $.ajax({
+        var thingstosend = JSON.stringify(editquizformdata);
+        
+        console.log(thingstosend);
+        
+        /*$.ajax({
           method: "PUT",
-          url: "/quiz",
-          data: editquizformdata
-        })
+          url: "/quiz/" + quizedit.id,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+          data: thingstosend
+        })*/
           
     });
     

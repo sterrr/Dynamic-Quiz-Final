@@ -13,9 +13,9 @@
 <body>
 
  <div id='Login'>
- <form id="Login">
+ <form id="Login"><h3>
 	Enter your Name:
-    <input type="text" name="name" id="NAME" class="form-control" placeholder="Name">
+     </h3><input type="text" name="name" id="NAME" class="form-control" placeholder="Name">
      
 </form>
 </div>
@@ -24,6 +24,11 @@
    
     
 <div id='menucontainer'>
+      <h3><div id='instructions'>
+	  Then Make a Selection from the Menus Below:
+      </div></h3>
+    
+    <div class="btn-group inline-block">
 <div class="dropdown nav pull-left">
 				<br/>
 					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose a Quiz!
@@ -37,7 +42,7 @@
     
     <div class="dropdown nav pull-left">
 				<br/>
-					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Delete a Quiz!
+					<button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">Delete a Quiz!
 						<span class="caret"></span></button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 <% for(var i=0; i< list.titles.length; i++) {%>
@@ -48,7 +53,7 @@
     
     <div class="dropdown nav pull-left">
 				<br/>
-					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Edit a Quiz!
+					<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Edit a Quiz!
 						<span class="caret"></span></button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
 <% for(var i=0; i< list.titles.length; i++) {%>
@@ -57,10 +62,12 @@
   </ul>
         
 </div>
-    
-        <a href="#"><button id="create" type="button" class="btn btn-primary nav pull-left">Create a Quiz!</button></a>                   
+   
         
+<a href="#"><button id="create" type="button" class="btn btn-success nav pull-left col-md-9">Create a Quiz!</button></a>  
 
+</div>
+    </div>
         
    
 					
@@ -97,17 +104,14 @@
     
     <div id='container2'>
     </div>
-        
-    <div id='container3'>
+    
+       <div id='container3'>
     </div>
+        
+   
     
    
-  
-
-
-
-
-  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
   <script src="public/js/bootstrap.min.js"></script>
   <script type='text/javascript' src='public/js/Q.js'></script>
     <script src='public/js/jquery.serialize-object.min.js'></script>

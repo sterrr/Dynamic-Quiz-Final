@@ -4,11 +4,11 @@ var app = express();
 var bodyParser = require('body-parser');  
 var path = require('path');
 var ejs = require('ejs');
-var https = require("https");
+
 
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(express.static('public'));
+
 
 app.listen(process.env.PORT || 3000);
 
@@ -50,27 +50,6 @@ app.get('/quiz/:id', function(req, res) {// Returns a Single Quiz from Quizzes
   console.log("Quiz Chosen!");
 });
 
-/*
-app.post('/quiz', function(req, res) { //Saves Results from Completed Quiz to Quizzes
-  var savedjson = JSON.stringify(req.body, null, 4);
-  console.log(savedjson);
-  fs.writeFile('./data/Quizzes.json', savedjson);
-  res.send(savedjson);
-  console.log("Results Saved!");
-});
-*/
-
-app.post('/quiz', function(req, res) {
-  var postquizzes = require('./data/Quizzes.json');
-  var postaddquiz = req.body;
-  postaddquiz.id = postquiz.length+1;
-  postquizzes[postaddquiz.id-1] = postaddquiz;
-  var poststring = JSON.stringify(postquizzes, null, 4);
-  fs.writeFile('./data/Quizzes.json', poststring);
-  console.log('Results/Quiz saved!');
-  });
-
-
 
 app.delete('/quiz/:id', function(req, res){ //Deleted Chosen Quiz from Quizzes
   var deleteid = req.params.id;
@@ -83,7 +62,7 @@ app.delete('/quiz/:id', function(req, res){ //Deleted Chosen Quiz from Quizzes
 
   var splicedquizzes = JSON.stringify(deletequizzes, null, 4);
   fs.writeFileSync('./data/Quizzes.json', splicedquizzes, 'utf8');
-  console.log("Quiz Deleted!");
+  console.log("Quiz Deleted!!!");
 });
 
 app.put('/quiz/:id', function(req, res) { //Updates Chosen Quiz from Quizzes
@@ -91,56 +70,25 @@ app.put('/quiz/:id', function(req, res) { //Updates Chosen Quiz from Quizzes
   putquizzes[req.params.id-1] = req.body;
   var putstring = JSON.stringify(putquizzes, null, 4);
   fs.writeFile('./data/Quizzes.json', putstring);
-  console.log("Quiz Put!");
+  console.log("Quiz Updated!");
   res.send(putquizzes);
 });
 
+app.post('/quiz', function(req, res) { //Creates New Quiz and adds it to Quizzes.json
+  var postquizzes = require('./data/Quizzes.json');
+  var postaddquiz = req.body;
+  postaddquiz.id = postquizzes.length+1;
+  postquizzes[postaddquiz.id-1] = postaddquiz;
+  var poststring = JSON.stringify(postquizzes, null, 4);
+  fs.writeFile('./data/Quizzes.json', poststring);
+  console.log('New Quiz Created!');
+  });
 
 
 
 
 
-/* OLD CODE 
 
-app.get('/gettopJSON', function(request, response) {
-  var a = require('./data/TopUsers.json');
-  response.send(a);
-});
-
-
-//Old Get/Post Code
-
-app.get('/', function (req, res) {
-  var content = fs.readFileSync("public/index.html", 'utf8');
-  res.send(content);
-});
-
-app.get('/quiz', function (req, res) {
-  var content = fs.readFileSync("data/questions.json", 'utf8');
-  res.send(content);
-});
-
-
-
-
-app.post('/quiz', function (req, res) {
-    fs.writeFileSync("data/questions.json", JSON.stringify(req.body));
-    res.send("Please Work...");
-});
-*/
-
-//for future high score implementation
-/*
-app.get('/highscores', function (req, res) {
-    var scorecontent = fs.readFileSync("data/TopUsers.json");
-	res.send(scorecontent);
-});
-
-app.post('/highscores', function (req, res) {
-    fs.writeFileSync("data/TopUsers.json", JSON.stringify(req.body));
-    res.send("I want to be the very best!");
-});
-*/
 
 
  

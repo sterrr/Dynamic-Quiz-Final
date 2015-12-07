@@ -90,7 +90,7 @@ app.put('/quiz/:id', function(req, res) { //Updates Chosen Quiz from Quizzes
   var putquizzes = require('./data/Quizzes.json');
   putquizzes[req.params.id-1] = req.body;
   var putstring = JSON.stringify(putquizzes, null, 4);
-  fs.writeFile('./data/Quizzes.json', putquizzes);
+  fs.writeFile('./data/Quizzes.json', putstring);
   console.log("Quiz Put!");
   res.send(putquizzes);
 });

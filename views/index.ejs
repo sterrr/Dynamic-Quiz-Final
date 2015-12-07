@@ -16,9 +16,10 @@
  <form id="Login">
 	Enter your Name:
     <input type="text" name="name" id="NAME" class="form-control" placeholder="Name">
-    
+     
 </form>
 </div>
+    
  
    
     
@@ -40,7 +41,7 @@
 						<span class="caret"></span></button>
 						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 <% for(var i=0; i< list.titles.length; i++) {%>
-   <li><a class="delete" alt="<%= list.id[i] %>" href="#"><%= list.titles[i] %></a></li>
+   <li><a class="delete" alt="<%= list.id[i] %>" href="/"><%= list.titles[i] %></a></li>
 <% } %>
   </ul>
 					</div>
@@ -97,6 +98,12 @@
     <div id='pie'></div>
     <div id='results'></div>
    </div>
+    
+    <div id='container2'>
+    </div>
+        
+    
+    
    
   
 

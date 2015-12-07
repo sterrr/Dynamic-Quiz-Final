@@ -2,6 +2,7 @@ html {
 
 background-image: url('../Photos/Capture2.JPG');
 background-image: url('../Photos/Capture1.JPG');
+background: #512D78;
 
 }
 
@@ -58,7 +59,7 @@ button {
   color: black;
 }
 
-#container {
+#container1 {
   width: 50%;
   margin: auto;
   padding: 20px 25px 50px 70px;
@@ -86,3 +87,7 @@ ul {
 #results {
     text-align: left;
 }
+
+
+
+

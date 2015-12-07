@@ -7,7 +7,7 @@
 //Please turn sound on for full enjoyment of the project
 (function() {
     //Conceals quiz upon opening the HTML page
-    $("#container").hide();
+    $("#container1").hide();
     $("#minutes").hide();
     $("#seconds").hide();
     $('#pie').hide();
@@ -132,8 +132,8 @@
             console.log(id);
             $('#header').text(quiz.title);
 	        $('#description').text(quiz.description);
-              $('#title1').text(quiz.title);
-            $("#container").show();
+            $('#title1').text(quiz.title);
+            $("#container1").show();
             displayNext();
             
             audioElement.play();
@@ -259,9 +259,9 @@
                 $.ajax({
         type: "PUT",
         url : "/quiz/" + id,
-        //dataType: "json",
+        dataType: "json",
         //contentType: "application/json; charset=utf-8",
-        data : quiz
+        //data : quiz
     });
                 
              

@@ -81,8 +81,8 @@ app.delete('/quiz/:id', function(req, res){ //Deleted Chosen Quiz from Quizzes
  deletequizzes[i].id=deletequizzes[i].id-1;
   }
 
-  var splicedquizzes = JSON.stringify(allquizzes, null, 4);
-  fs.writeFile('./data/Quizzes.json', splicedquizzes, 'utf8');
+  var splicedquizzes = JSON.stringify(deletequizzes, null, 4);
+  fs.writeFileSync('./data/Quizzes.json', splicedquizzes, 'utf8');
   console.log("Quiz Deleted!");
 });
 
@@ -90,7 +90,7 @@ app.put('/quiz/:id', function(req, res) { //Updates Chosen Quiz from Quizzes
   var putquizzes = require('./data/Quizzes.json');
   putquizzes[req.params.id-1] = req.body;
   var putstring = JSON.stringify(putquizzes, null, 4);
-  fs.writeFile('./data/Quizzes.json', putstring);
+  fs.writeFile('./data/Quizzes.json', putquizzes);
   console.log("Quiz Put!");
   res.send(putquizzes);
 });

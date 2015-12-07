@@ -38,9 +38,31 @@
 				<br/>
 					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Delete a Quiz!
 						<span class="caret"></span></button>
-						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 <% for(var i=0; i< list.titles.length; i++) {%>
    <li><a class="delete" alt="<%= list.id[i] %>" href="#"><%= list.titles[i] %></a></li>
+<% } %>
+  </ul>
+					</div>
+    
+    <div class="dropdown nav pull-left">
+				<br/>
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Edit a Quiz!
+						<span class="caret"></span></button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+<% for(var i=0; i< list.titles.length; i++) {%>
+   <li><a class="edit" alt="<%= list.id[i] %>" href="#"><%= list.titles[i] %></a></li>
+<% } %>
+  </ul>
+					</div>
+    
+    <div class="dropdown nav pull-left">
+				<br/>
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create a Quiz!
+						<span class="caret"></span></button>
+						 <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+<% for(var i=0; i< list.titles.length; i++) {%>
+   <li><a class="create" alt="<%= list.id[i] %>" href="#"><%= list.titles[i] %></a></li>
 <% } %>
   </ul>
 					</div>
@@ -48,7 +70,7 @@
     
 
 
-  <div id='container'>
+  <div id='container1'>
     <h1><center><div id='title1'>
       Quiz
         </div></center></h1>
